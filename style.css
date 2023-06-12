@@ -1,37 +1,78 @@
-body {
-  background-color: black;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.heading__div {
+:root {
+  --dark-blue: hsl(235, 21%, 11%);
+  --dark-black: hsl(235, 24%, 19%);
+}
+
+html,
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+}
+
+body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  background-color: var(--dark-blue);
+  background-image: url(./images/bg-desktop-dark.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+input {
+  display: block;
+  width: 100%;
+}
+button {
+  background: none;
+  border: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  padding-block: 2rem;
+}
+
+.moon {
+  display: none;
 }
 
 .heading {
   color: white;
 }
 
-.ul {
-  margin: 0;
-  padding: 0;
-}
-
-.ul .li {
-  padding: 12px 8px 12px 40px;
-  background: rgb(68, 68, 68);
-  font-size: 18px;
-  border: 0.5px solid black;
-}
-
-.header {
-  padding: 30px 40px;
-  color: white;
-  text-align: center;
-}
-
 .type-area {
-  padding-inline: 488px;
   padding-block: 17px;
-  background: rgb(68, 68, 68);
+  background: var(--dark-black);
+}
+
+.todo-list {
+}
+
+.todo-list .todo-item {
+  padding: 12px 8px 12px 40px;
+  background: hsl(235, 24%, 19%);
+  font-size: 18px;
+  border-bottom: 0.5px solid white;
+}
+
+.wrapper {
+  max-width: 480px;
+  width: 100%;
+}
+
+.drag {
+  display: flex;
+  align-items: center;
 }
