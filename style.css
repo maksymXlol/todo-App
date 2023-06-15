@@ -7,6 +7,7 @@
 :root {
   --dark-blue: hsl(235, 21%, 11%);
   --dark-black: hsl(235, 24%, 19%);
+  --check-bg: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 
 html,
@@ -37,6 +38,10 @@ button {
   border: none;
 }
 
+ul {
+  list-style: none;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -55,16 +60,53 @@ button {
 .type-area {
   padding-block: 17px;
   background: var(--dark-black);
+  margin-bottom: 1.5rem;
 }
 
 .todo-list {
 }
 
-.todo-list .todo-item {
-  padding: 12px 8px 12px 40px;
+.todo-item {
+  padding-block: 1rem;
+  padding-inline: 3rem;
   background: hsl(235, 24%, 19%);
   font-size: 18px;
   border-bottom: 0.5px solid white;
+  position: relative;
+}
+
+.todo-text {
+  color: white;
+}
+
+.done-btn {
+  width: 1.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid grey;
+}
+
+.done-btn:hover {
+}
+
+.done-btn.checked {
+  background: url(./images/icon-check.svg) no-repeat center, var(--check-bg);
+}
+
+.cancel-btn {
+  width: 1.5rem;
+  aspect-ratio: 1;
+  background: url(./images/icon-cross.svg) no-repeat 100%;
+  cursor: pointer;
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .wrapper {
@@ -73,6 +115,9 @@ button {
 }
 
 .drag {
-  display: flex;
-  align-items: center;
+  text-align: center;
+  color: white;
+  font-weight: 400;
+  font-size: 0.95rem;
+  padding-top: 1.5rem;
 }
