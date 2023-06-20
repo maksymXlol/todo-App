@@ -57,15 +57,66 @@
       </button>
     </header>
     <main class="wrapper">
-      <input class="type-area" type="text" placeholder="Create a new todo..." />
+      <form action="" class="todo-item type-area">
+        <input
+          class="todo-text"
+          type="text"
+          placeholder="Create a new todo..."
+        />
+        <button class="done-btn"></button>
+      </form>
+
       <section class="dashboard">
         <ul class="todo-list">
-          <li class="todo-item">
+          <li class="todo-item" data-todo-status="active">
+            <button class="done-btn"></button>
+            <p class="todo-text">Lorem ipsum dolor sit amet consectetur</p>
+            <button class="cancel-btn"></button>
+          </li>
+          <li class="todo-item" data-todo-status="completed">
             <button class="done-btn"></button>
             <p class="todo-text">Lorem ipsum dolor sit amet consectetur</p>
             <button class="cancel-btn"></button>
           </li>
         </ul>
+        <article class="details">
+          <span class="items-left"> 2 items left </span>
+          <ul class="filters-list">
+            <li class="filters-item">
+              <label for="filters-all">
+                All
+                <input
+                  type="radio"
+                  name="filters"
+                  value="All"
+                  id="filters-all"
+                />
+              </label>
+            </li>
+            <li class="filters-item">
+              <label for="filters-active">
+                Active
+                <input
+                  type="radio"
+                  name="filters"
+                  value="Active"
+                  id="filters-active"
+                />
+              </label>
+            </li>
+            <li class="filters-item">
+              <label for="filters-completed">
+                Completed
+                <input
+                  type="radio"
+                  name="filters"
+                  value="Completed"
+                  id="filters-completed"
+                />
+              </label>
+            </li>
+          </ul>
+        </article>
       </section>
     </main>
     <footer class="wrapper">

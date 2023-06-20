@@ -8,6 +8,9 @@
   --dark-blue: hsl(235, 21%, 11%);
   --dark-black: hsl(235, 24%, 19%);
   --check-bg: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  --todo-completed: hsl(233, 14%, 35%);
+  --light-grayish-blue: hsl(234, 39%, 85%);
+  --light-grayish-blue-hover: hsl(236, 33%, 92%);
 }
 
 html,
@@ -32,7 +35,16 @@ body {
 input {
   display: block;
   width: 100%;
+  font: inherit;
+  border: none;
+  background: none;
+  outline: none;
 }
+
+input[type="radio"] {
+  appearance: none;
+}
+
 button {
   background: none;
   border: none;
@@ -58,12 +70,8 @@ ul {
 }
 
 .type-area {
-  padding-block: 17px;
-  background: var(--dark-black);
   margin-bottom: 1.5rem;
-}
-
-.todo-list {
+  border-radius: 5px;
 }
 
 .todo-item {
@@ -71,12 +79,20 @@ ul {
   padding-inline: 3rem;
   background: hsl(235, 24%, 19%);
   font-size: 18px;
-  border-bottom: 0.5px solid white;
   position: relative;
+}
+
+.todo-list .todo-item {
+  border-bottom: 0.5px solid white;
 }
 
 .todo-text {
   color: white;
+}
+
+.todo-item[data-todo-status="completed"] .todo-text {
+  text-decoration: line-through;
+  color: var(--todo-completed);
 }
 
 .done-btn {
@@ -91,11 +107,17 @@ ul {
   border: 1px solid grey;
 }
 
-.done-btn:hover {
+.todo-item[data-todo-status="active"] .done-btn:hover {
+  border: 1px solid transparent;
+  background-image: linear-gradient(var(--dark-black), var(--dark-black)),
+    var(--check-bg);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
 }
 
-.done-btn.checked {
+.todo-item[data-todo-status="completed"] .done-btn {
   background: url(./images/icon-check.svg) no-repeat center, var(--check-bg);
+  border: none;
 }
 
 .cancel-btn {
@@ -107,6 +129,36 @@ ul {
   right: 0.5rem;
   top: 50%;
   transform: translateY(-50%);
+  opacity: 0;
+}
+
+.todo-item[data-todo-status]:hover .cancel-btn {
+  opacity: 1;
+}
+
+.filters-list {
+  display: flex;
+  gap: 10px;
+  padding-right: 160px;
+  padding-top: 10px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  background: hsl(235, 24%, 19%);
+  border-radius: 5px;
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+
+.items-left {
+  padding-top: 10px;
+  padding-left: 12px;
+}
+
+.filters-item:has(input[type="radio"]:checked) {
+  color: rgb(97, 97, 218);
 }
 
 .wrapper {
