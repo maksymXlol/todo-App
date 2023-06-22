@@ -37,8 +37,18 @@ input {
   width: 100%;
   font: inherit;
   border: none;
-  background: none;
+  background: none !important;
   outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: white;
+  transition: background-color 5000s ease-in-out 0s;
+  /* box-shadow: inset 0 0 20px 20px transparent; */
 }
 
 input[type="radio"] {
@@ -141,6 +151,7 @@ ul {
   gap: 10px;
   padding-right: 160px;
   padding-top: 10px;
+  color: white;
 }
 
 .details {
@@ -148,13 +159,14 @@ ul {
   justify-content: space-between;
   background: hsl(235, 24%, 19%);
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 14px;
   padding-bottom: 10px;
 }
 
 .items-left {
   padding-top: 10px;
   padding-left: 12px;
+  color: white;
 }
 
 .filters-item:has(input[type="radio"]:checked) {
