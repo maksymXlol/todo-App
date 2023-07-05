@@ -149,8 +149,18 @@ ul {
 .filters-list {
   display: flex;
   gap: 10px;
-  padding-right: 160px;
-  padding-top: 10px;
+  color: var(--light-grayish-blue);
+}
+
+.filters-item:hover {
+  color: white;
+}
+
+.clear-complete {
+  color: var(--light-grayish-blue);
+}
+.clear-complete:hover {
+  cursor: pointer;
   color: white;
 }
 
@@ -160,13 +170,11 @@ ul {
   background: hsl(235, 24%, 19%);
   border-radius: 5px;
   font-size: 14px;
-  padding-bottom: 10px;
+  padding: 10px;
 }
 
 .items-left {
-  padding-top: 10px;
-  padding-left: 12px;
-  color: white;
+  color: var(--light-grayish-blue);
 }
 
 .filters-item:has(input[type="radio"]:checked) {
